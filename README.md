@@ -20,7 +20,19 @@ npm run build
 
 ## Usage
 
-### With Claude Desktop
+### Deploy to Railway (Recommended)
+
+1. Push this repo to GitHub
+2. Go to [Railway](https://railway.app) and create a new project
+3. Select "Deploy from GitHub repo"
+4. Railway will auto-detect the config and deploy
+
+Once deployed, you'll get endpoints:
+- **Health**: `https://your-app.railway.app/health`
+- **MCP SSE**: `https://your-app.railway.app/sse`
+- **REST API**: `https://your-app.railway.app/api/reports`
+
+### With Claude Desktop (Local)
 
 Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
 
@@ -35,10 +47,26 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
+### With Claude Desktop (Remote via Railway)
+
+```json
+{
+  "mcpServers": {
+    "sov-quasi-reports": {
+      "url": "https://your-app.railway.app/sse"
+    }
+  }
+}
+```
+
 ### Development
 
 ```bash
+# Local stdio mode
 npm run dev
+
+# Local HTTP mode (simulates Railway)
+PORT=3000 npm run dev
 ```
 
 ## Tools
