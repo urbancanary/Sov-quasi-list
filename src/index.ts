@@ -600,6 +600,14 @@ async function runHttp() {
     res.json(data);
   });
 
+  // Get reports as markdown (for easy viewing/sharing)
+  app.get("/api/reports.md", (_req: Request, res: Response) => {
+    const data = loadReports();
+    const markdown = generateMarkdown(data);
+    res.setHeader("Content-Type", "text/markdown");
+    res.send(markdown);
+  });
+
   // ============ WORK QUEUE ENDPOINTS (for Mobile) ============
 
   // Get reports that need research/work - for mobile to know what to focus on
