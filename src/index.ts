@@ -560,6 +560,93 @@ async function runHttp() {
     res.status(201).json(newReport);
   });
 
+  // Upload markdown file endpoint (for Orca/mobile)
+  app.post("/api/upload", express.text({ type: "*/*", limit: "10mb" }), (req: Request, res: Response) => {
+    const filename = (req.query.filename as string) || `upload_${Date.now()}.md`;
+    const reportId = req.query.reportId as string;
+
+    ensureDataDir();
+
+    // Save the uploaded file
+    const safeFilename = `${Date.now()}_${filename.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
+    const filePath = path.join(UPLOADS_DIR, safeFilename);
+    fs.writeFileSync(filePath, req.body);
+
+    // If reportId provided, attach to that report
+    if (reportId) {
+      const data = loadReports();
+      const report = data.reports.find(r => r.id === reportId);
+      if (report) {
+        if (!report.attachments) report.attachments = [];
+        report.attachments.push(safeFilename);
+        report.updatedAt = new Date().toISOString();
+        saveReports(data);
+      }
+    }
+
+    res.status(201).json({
+      success: true,
+      filename: safeFilename,
+      path: filePath,
+      size: req.body.length,
+      attachedTo: reportId || null,
+    });
+  });
+
+  // Upload file as base64 (alternative for mobile)
+  app.post("/api/upload-base64", (req: Request, res: Response) => {
+    const { filename, content, reportId } = req.body;
+
+    if (!filename || !content) {
+      res.status(400).json({ error: "filename and content required" });
+      return;
+    }
+
+    ensureDataDir();
+
+    const safeFilename = `${Date.now()}_${filename.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
+    const filePath = path.join(UPLOADS_DIR, safeFilename);
+    const buffer = Buffer.from(content, "base64");
+    fs.writeFileSync(filePath, buffer);
+
+    // If reportId provided, attach to that report
+    if (reportId) {
+      const data = loadReports();
+      const report = data.reports.find(r => r.id === reportId);
+      if (report) {
+        if (!report.attachments) report.attachments = [];
+        report.attachments.push(safeFilename);
+        report.updatedAt = new Date().toISOString();
+        saveReports(data);
+      }
+    }
+
+    res.status(201).json({
+      success: true,
+      filename: safeFilename,
+      size: buffer.length,
+      attachedTo: reportId || null,
+    });
+  });
+
+  // List uploaded files
+  app.get("/api/uploads", (_req: Request, res: Response) => {
+    ensureDataDir();
+    const files = fs.readdirSync(UPLOADS_DIR).filter(f => f !== ".gitkeep");
+    res.json({ files });
+  });
+
+  // Get uploaded file content
+  app.get("/api/uploads/:filename", (req: Request, res: Response) => {
+    const filePath = path.join(UPLOADS_DIR, req.params.filename);
+    if (!fs.existsSync(filePath)) {
+      res.status(404).json({ error: "File not found" });
+      return;
+    }
+    const content = fs.readFileSync(filePath, "utf-8");
+    res.type("text/plain").send(content);
+  });
+
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(`Sov-Quasi Reports MCP server running on http://localhost:${PORT}`);
