@@ -123,7 +123,7 @@ function saveReports(data: ReportsData): void {
 
   // Also save as markdown for easy viewing
   const markdown = generateMarkdown(data);
-  fs.writeFileSync(path.join(DATA_DIR, "reports.md"), markdown);
+  fs.writeFileSync(path.join(DATA_DIR, "reports_full.md"), markdown);
 }
 
 // Generate markdown from reports
@@ -601,7 +601,7 @@ async function runHttp() {
   });
 
   // Get reports as markdown (for easy viewing/sharing)
-  app.get("/api/reports.md", (_req: Request, res: Response) => {
+  app.get("/api/reports_full.md", (_req: Request, res: Response) => {
     const data = loadReports();
     const markdown = generateMarkdown(data);
     res.setHeader("Content-Type", "text/markdown");
