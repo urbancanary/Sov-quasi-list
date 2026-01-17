@@ -20,6 +20,21 @@ type ReportStatus =
   | "completed"       // Report is done
   | "needs-update";   // Report needs revision
 
+type SyncStatus =
+  | "pending-sync"    // Uploaded to cloud, not yet synced to Mac
+  | "synced"          // Downloaded to Mac for processing
+  | "processing"      // Currently being processed on Mac
+  | "processed";      // Processing complete
+
+interface UploadedFile {
+  filename: string;
+  originalName: string;
+  uploadedAt: string;
+  syncStatus: SyncStatus;
+  syncedAt?: string;
+  size: number;
+}
+
 interface Report {
   id: string;
   name: string;
@@ -31,6 +46,10 @@ interface Report {
   updatedAt: string;
 }
 
+interface UploadsData {
+  files: UploadedFile[];
+}
+
 interface ReportsData {
   reports: Report[];
 }
@@ -38,6 +57,7 @@ interface ReportsData {
 // Paths
 const DATA_DIR = path.join(process.cwd(), "data");
 const REPORTS_FILE = path.join(DATA_DIR, "reports.json");
+const UPLOADS_FILE = path.join(DATA_DIR, "uploads.json");
 const UPLOADS_DIR = path.join(DATA_DIR, "uploads");
 
 // Ensure directories exist
@@ -48,6 +68,39 @@ function ensureDataDir() {
   if (!fs.existsSync(UPLOADS_DIR)) {
     fs.mkdirSync(UPLOADS_DIR, { recursive: true });
   }
+}
+
+// Load uploads tracking from JSON file
+function loadUploads(): UploadsData {
+  ensureDataDir();
+  if (!fs.existsSync(UPLOADS_FILE)) {
+    const initial: UploadsData = { files: [] };
+    fs.writeFileSync(UPLOADS_FILE, JSON.stringify(initial, null, 2));
+    return initial;
+  }
+  const content = fs.readFileSync(UPLOADS_FILE, "utf-8");
+  return JSON.parse(content);
+}
+
+// Save uploads tracking to JSON file
+function saveUploads(data: UploadsData): void {
+  ensureDataDir();
+  fs.writeFileSync(UPLOADS_FILE, JSON.stringify(data, null, 2));
+}
+
+// Track a new upload
+function trackUpload(filename: string, originalName: string, size: number): UploadedFile {
+  const uploads = loadUploads();
+  const file: UploadedFile = {
+    filename,
+    originalName,
+    uploadedAt: new Date().toISOString(),
+    syncStatus: "pending-sync",
+    size,
+  };
+  uploads.files.push(file);
+  saveUploads(uploads);
+  return file;
 }
 
 // Load reports from JSON file
@@ -578,6 +631,9 @@ async function runHttp() {
     const filePath = path.join(UPLOADS_DIR, safeFilename);
     fs.writeFileSync(filePath, req.body);
 
+    // Track upload with sync status
+    const tracked = trackUpload(safeFilename, filename, req.body.length);
+
     // If reportId provided, attach to that report
     if (reportId) {
       const data = loadReports();
@@ -593,8 +649,10 @@ async function runHttp() {
     res.status(201).json({
       success: true,
       filename: safeFilename,
+      originalName: filename,
       path: filePath,
       size: req.body.length,
+      syncStatus: tracked.syncStatus,
       attachedTo: reportId || null,
     });
   });
@@ -615,6 +673,9 @@ async function runHttp() {
     const buffer = Buffer.from(content, "base64");
     fs.writeFileSync(filePath, buffer);
 
+    // Track upload with sync status
+    const tracked = trackUpload(safeFilename, filename, buffer.length);
+
     // If reportId provided, attach to that report
     if (reportId) {
       const data = loadReports();
@@ -630,8 +691,124 @@ async function runHttp() {
     res.status(201).json({
       success: true,
       filename: safeFilename,
+      originalName: filename,
       size: buffer.length,
+      syncStatus: tracked.syncStatus,
       attachedTo: reportId || null,
+    });
+  });
+
+  // ============ SYNC ENDPOINTS ============
+
+  // Get files pending sync (for Mac to pull)
+  app.get("/api/sync/pending", (_req: Request, res: Response) => {
+    const uploads = loadUploads();
+    const pending = uploads.files.filter(f => f.syncStatus === "pending-sync");
+    res.json({
+      count: pending.length,
+      files: pending,
+    });
+  });
+
+  // Download a file (for Mac sync script)
+  app.get("/api/sync/download/:filename", (req: Request, res: Response) => {
+    const filePath = path.join(UPLOADS_DIR, req.params.filename);
+    if (!fs.existsSync(filePath)) {
+      res.status(404).json({ error: "File not found" });
+      return;
+    }
+
+    // Get file info from uploads tracking
+    const uploads = loadUploads();
+    const fileInfo = uploads.files.find(f => f.filename === req.params.filename);
+
+    res.setHeader("Content-Type", "text/markdown");
+    res.setHeader("X-Original-Name", fileInfo?.originalName || req.params.filename);
+    res.setHeader("X-Sync-Status", fileInfo?.syncStatus || "unknown");
+
+    const content = fs.readFileSync(filePath);
+    res.send(content);
+  });
+
+  // Mark file(s) as synced (called by Mac after download)
+  app.post("/api/sync/mark-synced", (req: Request, res: Response) => {
+    const { filenames } = req.body;
+
+    if (!filenames || !Array.isArray(filenames)) {
+      res.status(400).json({ error: "filenames array required" });
+      return;
+    }
+
+    const uploads = loadUploads();
+    const now = new Date().toISOString();
+    let updated = 0;
+
+    for (const filename of filenames) {
+      const file = uploads.files.find(f => f.filename === filename);
+      if (file && file.syncStatus === "pending-sync") {
+        file.syncStatus = "synced";
+        file.syncedAt = now;
+        updated++;
+      }
+    }
+
+    saveUploads(uploads);
+
+    res.json({
+      success: true,
+      updated,
+      message: `Marked ${updated} file(s) as synced`,
+    });
+  });
+
+  // Mark file as processing/processed (for workflow tracking)
+  app.post("/api/sync/update-status", (req: Request, res: Response) => {
+    const { filename, status } = req.body;
+
+    if (!filename || !status) {
+      res.status(400).json({ error: "filename and status required" });
+      return;
+    }
+
+    if (!["pending-sync", "synced", "processing", "processed"].includes(status)) {
+      res.status(400).json({ error: "Invalid status" });
+      return;
+    }
+
+    const uploads = loadUploads();
+    const file = uploads.files.find(f => f.filename === filename);
+
+    if (!file) {
+      res.status(404).json({ error: "File not found in tracking" });
+      return;
+    }
+
+    file.syncStatus = status as SyncStatus;
+    if (status === "synced") {
+      file.syncedAt = new Date().toISOString();
+    }
+
+    saveUploads(uploads);
+
+    res.json({
+      success: true,
+      file,
+    });
+  });
+
+  // Get all uploads with sync status
+  app.get("/api/sync/status", (_req: Request, res: Response) => {
+    const uploads = loadUploads();
+    const summary = {
+      total: uploads.files.length,
+      pendingSync: uploads.files.filter(f => f.syncStatus === "pending-sync").length,
+      synced: uploads.files.filter(f => f.syncStatus === "synced").length,
+      processing: uploads.files.filter(f => f.syncStatus === "processing").length,
+      processed: uploads.files.filter(f => f.syncStatus === "processed").length,
+    };
+    res.json({
+      summary,
+      files: uploads.files,
     });
   });
 

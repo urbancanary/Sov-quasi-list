@@ -92,7 +92,56 @@ PORT=3000 npm run dev
 Data is stored in the `data/` directory:
 - `reports.json` - Main data file (JSON)
 - `reports.md` - Human-readable markdown view (auto-generated)
+- `uploads.json` - Upload tracking with sync status
 - `uploads/` - Uploaded file attachments
+
+## Mobile → Cloud → Mac Sync Workflow
+
+This server supports syncing raw reports from mobile devices to your Mac for processing:
+
+```
+┌─────────┐     POST /api/upload      ┌─────────────┐     sync script     ┌─────────┐
+│ Mobile  │ ──────────────────────────▶ │   Railway   │ ◀──────────────────│   Mac   │
+│ (Orca)  │   raw markdown files       │  MCP Server │   fetch & process  │         │
+└─────────┘                            └─────────────┘                     └─────────┘
+```
+
+### Sync Status Flow
+
+Files progress through these statuses:
+1. `pending-sync` - Uploaded to cloud, awaiting Mac sync
+2. `synced` - Downloaded to Mac
+3. `processing` - Currently being processed
+4. `processed` - Processing complete
+
+### Sync Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/sync/pending` | GET | List files waiting to be synced |
+| `/api/sync/download/:filename` | GET | Download a specific file |
+| `/api/sync/mark-synced` | POST | Mark files as synced |
+| `/api/sync/update-status` | POST | Update file status |
+| `/api/sync/status` | GET | Get sync status summary |
+
+### Mac Sync Script
+
+Run the sync script on your Mac to pull new uploads:
+
+```bash
+# Using Python (recommended)
+python scripts/sync_from_cloud.py --server https://your-app.railway.app
+
+# Using Bash
+./scripts/sync-from-cloud.sh https://your-app.railway.app
+
+# Dry run (see what would be downloaded)
+python scripts/sync_from_cloud.py --server https://your-app.railway.app --dry-run
+```
+
+Environment variables:
+- `SOV_SYNC_SERVER` - Server URL (default: http://localhost:3000)
+- `RAW_REPORTS_DIR` - Output directory for downloaded files
 
 ## Example Usage
 

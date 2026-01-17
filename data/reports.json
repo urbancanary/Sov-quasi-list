@@ -1,3 +1,244 @@
 {
-  "reports": []
+  "reports": [
+    {
+      "id": "sov_abudhabi",
+      "name": "Abu Dhabi",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Emirate of Abu Dhabi sovereign credit report",
+      "attachments": ["AbuDhabi_Raw_Report.md"],
+      "createdAt": "2025-05-19T00:00:00.000Z",
+      "updatedAt": "2025-05-19T00:00:00.000Z"
+    },
+    {
+      "id": "sov_brazil",
+      "name": "Brazil",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Federative Republic of Brazil sovereign credit report",
+      "attachments": ["Brazil_Raw_Report.md"],
+      "createdAt": "2025-05-23T00:00:00.000Z",
+      "updatedAt": "2025-05-23T00:00:00.000Z"
+    },
+    {
+      "id": "sov_chile",
+      "name": "Chile",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Chile sovereign credit report",
+      "attachments": ["Chile_Raw_Report.md"],
+      "createdAt": "2025-09-04T00:00:00.000Z",
+      "updatedAt": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": "sov_colombia",
+      "name": "Colombia",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Colombia sovereign credit report",
+      "attachments": ["Colombia_Raw_Report.md"],
+      "createdAt": "2026-01-07T00:00:00.000Z",
+      "updatedAt": "2026-01-07T00:00:00.000Z"
+    },
+    {
+      "id": "sov_france",
+      "name": "France",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "French Republic sovereign credit report",
+      "attachments": ["France_Raw_Report.md"],
+      "createdAt": "2025-11-15T00:00:00.000Z",
+      "updatedAt": "2025-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "sov_hungary",
+      "name": "Hungary",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Hungary sovereign credit report",
+      "attachments": ["Hungary_Raw_Report.md"],
+      "createdAt": "2025-10-24T00:00:00.000Z",
+      "updatedAt": "2025-10-24T00:00:00.000Z"
+    },
+    {
+      "id": "sov_india",
+      "name": "India",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of India sovereign credit report",
+      "attachments": ["India_Raw_Report.md"],
+      "createdAt": "2025-09-09T00:00:00.000Z",
+      "updatedAt": "2025-09-09T00:00:00.000Z"
+    },
+    {
+      "id": "sov_indonesia",
+      "name": "Indonesia",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Indonesia sovereign credit report",
+      "attachments": ["Indonesia_Raw_Report.md"],
+      "createdAt": "2025-09-06T00:00:00.000Z",
+      "updatedAt": "2025-09-06T00:00:00.000Z"
+    },
+    {
+      "id": "sov_kazakhstan",
+      "name": "Kazakhstan",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Kazakhstan sovereign credit report",
+      "attachments": ["Kazakhstan_Raw_Report.md"],
+      "createdAt": "2025-11-18T00:00:00.000Z",
+      "updatedAt": "2025-11-18T00:00:00.000Z"
+    },
+    {
+      "id": "sov_mexico",
+      "name": "Mexico",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "United Mexican States sovereign credit report",
+      "attachments": ["Mexico_Raw_Report.md"],
+      "createdAt": "2025-05-19T00:00:00.000Z",
+      "updatedAt": "2025-05-19T00:00:00.000Z"
+    },
+    {
+      "id": "sov_norway",
+      "name": "Norway",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Kingdom of Norway sovereign credit report",
+      "attachments": ["Norway_Raw_Report.md"],
+      "createdAt": "2025-10-15T00:00:00.000Z",
+      "updatedAt": "2025-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "sov_panama",
+      "name": "Panama",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Panama sovereign credit report",
+      "attachments": ["Panama_Raw_Report.md"],
+      "createdAt": "2025-05-18T00:00:00.000Z",
+      "updatedAt": "2025-05-18T00:00:00.000Z"
+    },
+    {
+      "id": "sov_peru",
+      "name": "Peru",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Peru sovereign credit report",
+      "attachments": ["Peru_Raw_Report.md"],
+      "createdAt": "2025-10-12T00:00:00.000Z",
+      "updatedAt": "2025-10-12T00:00:00.000Z"
+    },
+    {
+      "id": "sov_qatar",
+      "name": "Qatar",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "State of Qatar sovereign credit report",
+      "attachments": ["Qatar_Raw_Report.md"],
+      "createdAt": "2025-11-18T00:00:00.000Z",
+      "updatedAt": "2025-11-18T00:00:00.000Z"
+    },
+    {
+      "id": "sov_romania",
+      "name": "Romania",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Romania sovereign credit report",
+      "attachments": ["Romania_Raw_Report.md"],
+      "createdAt": "2025-10-12T00:00:00.000Z",
+      "updatedAt": "2025-10-12T00:00:00.000Z"
+    },
+    {
+      "id": "sov_saudiarabia",
+      "name": "Saudi Arabia",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Kingdom of Saudi Arabia sovereign credit report",
+      "attachments": ["SaudiArabia_Raw_Report.md"],
+      "createdAt": "2025-11-18T00:00:00.000Z",
+      "updatedAt": "2025-11-18T00:00:00.000Z"
+    },
+    {
+      "id": "sov_singapore",
+      "name": "Singapore",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Singapore sovereign credit report",
+      "attachments": ["Singapore_Raw_Report.md"],
+      "createdAt": "2025-10-17T00:00:00.000Z",
+      "updatedAt": "2025-10-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_southafrica",
+      "name": "South Africa",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of South Africa sovereign credit report",
+      "attachments": ["SouthAfrica_Raw_Report.md"],
+      "createdAt": "2025-10-16T00:00:00.000Z",
+      "updatedAt": "2025-10-16T00:00:00.000Z"
+    },
+    {
+      "id": "sov_southkorea",
+      "name": "South Korea",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Korea sovereign credit report",
+      "attachments": ["SouthKorea_Raw_Report.md"],
+      "createdAt": "2025-09-04T00:00:00.000Z",
+      "updatedAt": "2025-09-04T00:00:00.000Z"
+    },
+    {
+      "id": "sov_turkey",
+      "name": "Turkey",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Republic of Türkiye sovereign credit report",
+      "attachments": ["Turkey_Raw_Report.md"],
+      "createdAt": "2025-09-06T00:00:00.000Z",
+      "updatedAt": "2025-09-06T00:00:00.000Z"
+    },
+    {
+      "id": "sov_uae",
+      "name": "UAE",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "United Arab Emirates sovereign credit report",
+      "attachments": ["UAE_Raw_Report.md"],
+      "createdAt": "2025-05-21T00:00:00.000Z",
+      "updatedAt": "2025-05-21T00:00:00.000Z"
+    },
+    {
+      "id": "sov_uk",
+      "name": "United Kingdom",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "United Kingdom sovereign credit report",
+      "attachments": ["UK_Raw_Report.md"],
+      "createdAt": "2026-01-07T00:00:00.000Z",
+      "updatedAt": "2026-01-07T00:00:00.000Z"
+    },
+    {
+      "id": "sov_uruguay",
+      "name": "Uruguay",
+      "type": "sovereign",
+      "status": "raw-uploaded",
+      "description": "Oriental Republic of Uruguay sovereign credit report",
+      "attachments": ["Uruguay_Raw_Report.md"],
+      "createdAt": "2025-09-16T00:00:00.000Z",
+      "updatedAt": "2025-09-16T00:00:00.000Z"
+    },
+    {
+      "id": "quasi_gaci",
+      "name": "GACI",
+      "type": "quasi-sovereign",
+      "status": "raw-uploaded",
+      "description": "General Authority of Civil Aviation - Saudi Arabia quasi-sovereign entity",
+      "attachments": ["GACI_Raw_Report.md"],
+      "createdAt": "2025-10-17T00:00:00.000Z",
+      "updatedAt": "2025-10-17T00:00:00.000Z"
+    }
+  ]
 }
