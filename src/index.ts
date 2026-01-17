@@ -14,11 +14,17 @@ import * as fs from "fs";
 import * as path from "path";
 
 // Types
+type ReportStatus =
+  | "raw-uploaded"    // Raw document uploaded, not yet processed
+  | "in-progress"     // Report is being written/processed
+  | "completed"       // Report is done
+  | "needs-update";   // Report needs revision
+
 interface Report {
   id: string;
   name: string;
   type: "sovereign" | "quasi-sovereign";
-  status: "pending" | "in-progress" | "completed";
+  status: ReportStatus;
   description?: string;
   attachments?: string[];
   createdAt: string;
@@ -139,7 +145,7 @@ function createServer() {
               },
               status: {
                 type: "string",
-                enum: ["pending", "in-progress", "completed"],
+                enum: ["raw-uploaded", "in-progress", "completed", "needs-update"],
                 description: "Filter by status",
               },
             },
@@ -184,7 +190,7 @@ function createServer() {
               },
               status: {
                 type: "string",
-                enum: ["pending", "in-progress", "completed"],
+                enum: ["raw-uploaded", "in-progress", "completed", "needs-update"],
                 description: "New status",
               },
               description: {
@@ -336,7 +342,7 @@ function createServer() {
           id: generateId(),
           name: args!.name as string,
           type: args!.type as "sovereign" | "quasi-sovereign",
-          status: "pending",
+          status: "raw-uploaded",
           description: args?.description as string | undefined,
           attachments: [],
           createdAt: now,
@@ -548,7 +554,7 @@ async function runHttp() {
       id: generateId(),
       name: req.body.name,
       type: req.body.type,
-      status: "pending",
+      status: "raw-uploaded",
       description: req.body.description,
       attachments: [],
       createdAt: now,
