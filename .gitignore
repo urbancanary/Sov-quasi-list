@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# Keep data directory but ignore uploads (they may be large/sensitive)
+data/uploads/*
+!data/uploads/.gitkeep
