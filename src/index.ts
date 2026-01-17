@@ -15,6 +15,7 @@ import * as path from "path";
 
 // Types
 type ReportStatus =
+  | "needs-research"  // No report exists yet - needs research/creation
   | "raw-uploaded"    // Raw document uploaded, not yet processed
   | "in-progress"     // Report is being written/processed
   | "completed"       // Report is done
@@ -597,6 +598,135 @@ async function runHttp() {
   app.get("/api/reports", (_req: Request, res: Response) => {
     const data = loadReports();
     res.json(data);
+  });
+
+  // ============ WORK QUEUE ENDPOINTS (for Mobile) ============
+
+  // Get reports that need research/work - for mobile to know what to focus on
+  app.get("/api/work-queue", (_req: Request, res: Response) => {
+    const data = loadReports();
+
+    // Priority order: needs-research > needs-update > raw-uploaded needing processing
+    const needsResearch = data.reports.filter(r => r.status === "needs-research");
+    const needsUpdate = data.reports.filter(r => r.status === "needs-update");
+    const rawUploaded = data.reports.filter(r => r.status === "raw-uploaded");
+
+    // Get sync status for context
+    const uploads = loadUploads();
+    const pendingSync = uploads.files.filter(f => f.syncStatus === "pending-sync").length;
+
+    res.json({
+      summary: {
+        needsResearch: needsResearch.length,
+        needsUpdate: needsUpdate.length,
+        rawUploaded: rawUploaded.length,
+        pendingSync,
+      },
+      // Reports needing new research (highest priority for mobile)
+      needsResearch: needsResearch.map(r => ({
+        id: r.id,
+        name: r.name,
+        type: r.type,
+        description: r.description,
+      })),
+      // Reports needing updates
+      needsUpdate: needsUpdate.map(r => ({
+        id: r.id,
+        name: r.name,
+        type: r.type,
+        description: r.description,
+      })),
+      // Recently uploaded raw reports (for awareness)
+      recentUploads: rawUploaded.slice(0, 5).map(r => ({
+        id: r.id,
+        name: r.name,
+        type: r.type,
+      })),
+    });
+  });
+
+  // Quick status check - what needs attention
+  app.get("/api/work-queue/summary", (_req: Request, res: Response) => {
+    const data = loadReports();
+    const uploads = loadUploads();
+
+    const byStatus: Record<string, number> = {};
+    for (const r of data.reports) {
+      byStatus[r.status] = (byStatus[r.status] || 0) + 1;
+    }
+
+    const bySyncStatus: Record<string, number> = {};
+    for (const f of uploads.files) {
+      bySyncStatus[f.syncStatus] = (bySyncStatus[f.syncStatus] || 0) + 1;
+    }
+
+    res.json({
+      reports: {
+        total: data.reports.length,
+        byStatus,
+      },
+      uploads: {
+        total: uploads.files.length,
+        bySyncStatus,
+      },
+    });
+  });
+
+  // Update report status (for Mac to call after processing)
+  app.patch("/api/reports/:id/status", (req: Request, res: Response) => {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!status || !["needs-research", "raw-uploaded", "in-progress", "completed", "needs-update"].includes(status)) {
+      res.status(400).json({ error: "Invalid status" });
+      return;
+    }
+
+    const data = loadReports();
+    const report = data.reports.find(r => r.id === id);
+
+    if (!report) {
+      res.status(404).json({ error: "Report not found" });
+      return;
+    }
+
+    report.status = status as ReportStatus;
+    report.updatedAt = new Date().toISOString();
+    saveReports(data);
+
+    res.json({
+      success: true,
+      report,
+    });
+  });
+
+  // Batch update statuses (for Mac to call after processing multiple)
+  app.post("/api/reports/batch-status", (req: Request, res: Response) => {
+    const { updates } = req.body;
+
+    if (!updates || !Array.isArray(updates)) {
+      res.status(400).json({ error: "updates array required" });
+      return;
+    }
+
+    const data = loadReports();
+    let updated = 0;
+
+    for (const { id, status } of updates) {
+      const report = data.reports.find(r => r.id === id);
+      if (report && ["needs-research", "raw-uploaded", "in-progress", "completed", "needs-update"].includes(status)) {
+        report.status = status as ReportStatus;
+        report.updatedAt = new Date().toISOString();
+        updated++;
+      }
+    }
+
+    saveReports(data);
+
+    res.json({
+      success: true,
+      updated,
+    });
   });
 
   app.post("/api/reports", (req: Request, res: Response) => {

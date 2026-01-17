@@ -239,6 +239,56 @@
       "attachments": ["GACI_Raw_Report.md"],
       "createdAt": "2025-10-17T00:00:00.000Z",
       "updatedAt": "2025-10-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_germany",
+      "name": "Germany",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Federal Republic of Germany - research needed",
+      "attachments": [],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_japan",
+      "name": "Japan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Japan - research needed",
+      "attachments": [],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_australia",
+      "name": "Australia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Commonwealth of Australia - research needed",
+      "attachments": [],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_canada",
+      "name": "Canada",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Canada - research needed",
+      "attachments": [],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_poland",
+      "name": "Poland",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Republic of Poland - research needed",
+      "attachments": [],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T00:00:00.000Z"
     }
   ]
 }

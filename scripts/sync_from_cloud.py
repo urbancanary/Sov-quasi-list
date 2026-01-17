@@ -3,10 +3,17 @@
 Sync raw reports from cloud MCP server to local Mac for processing.
 
 Usage:
-    python sync_from_cloud.py [--server URL] [--output-dir PATH]
+    # Sync pending files
+    python sync_from_cloud.py
 
-Example:
-    python sync_from_cloud.py --server https://sov-quasi-list.up.railway.app
+    # Show work queue (what needs research)
+    python sync_from_cloud.py --work-queue
+
+    # Show status summary
+    python sync_from_cloud.py --summary
+
+    # Dry run
+    python sync_from_cloud.py --dry-run
 """
 
 import argparse
@@ -24,7 +31,10 @@ except ImportError:
 
 
 # Default configuration
-DEFAULT_SERVER = "http://localhost:3000"
+DEFAULT_SERVER = os.environ.get(
+    "SOV_SYNC_SERVER",
+    "https://sov-quasi-list-production.up.railway.app"
+)
 DEFAULT_OUTPUT_DIR = "/Users/andyseaman/Notebooks/sovereign-credit-system/credit_reports/raw_reports"
 
 
@@ -161,13 +171,87 @@ def sync_from_cloud(server_url: str, output_dir: str, dry_run: bool = False) -> 
     return results
 
 
+def show_work_queue(server_url: str):
+    """Display what reports need attention."""
+    try:
+        response = requests.get(f"{server_url}/api/work-queue", timeout=30)
+        response.raise_for_status()
+        data = response.json()
+
+        print(f"\n{'='*50}")
+        print("  Work Queue - What Needs Attention")
+        print(f"{'='*50}")
+
+        summary = data.get("summary", {})
+        print(f"\n  📋 Needs Research: {summary.get('needsResearch', 0)}")
+        print(f"  🔄 Needs Update:   {summary.get('needsUpdate', 0)}")
+        print(f"  📄 Raw Uploaded:   {summary.get('rawUploaded', 0)}")
+        print(f"  ⏳ Pending Sync:   {summary.get('pendingSync', 0)}")
+
+        needs_research = data.get("needsResearch", [])
+        if needs_research:
+            print("\n  Countries needing research (priority for mobile):")
+            for r in needs_research:
+                desc = f" - {r.get('description', '')}" if r.get('description') else ""
+                print(f"    • {r['name']}{desc}")
+
+        needs_update = data.get("needsUpdate", [])
+        if needs_update:
+            print("\n  Reports needing update:")
+            for r in needs_update:
+                print(f"    • {r['name']}")
+
+        recent = data.get("recentUploads", [])
+        if recent:
+            print("\n  Recent raw uploads:")
+            for r in recent:
+                print(f"    • {r['name']}")
+
+        print()
+
+    except requests.RequestException as e:
+        print(f"❌ Failed to fetch work queue: {e}")
+        sys.exit(1)
+
+
+def show_summary(server_url: str):
+    """Display overall status summary."""
+    try:
+        response = requests.get(f"{server_url}/api/work-queue/summary", timeout=30)
+        response.raise_for_status()
+        data = response.json()
+
+        print(f"\n{'='*50}")
+        print("  Status Summary")
+        print(f"{'='*50}")
+
+        reports = data.get("reports", {})
+        print(f"\n  Total Reports: {reports.get('total', 0)}")
+        print("  By Status:")
+        for status, count in reports.get("byStatus", {}).items():
+            print(f"    {status}: {count}")
+
+        uploads = data.get("uploads", {})
+        if uploads.get("total", 0) > 0:
+            print(f"\n  Uploads: {uploads.get('total', 0)}")
+            print("  By Sync Status:")
+            for status, count in uploads.get("bySyncStatus", {}).items():
+                print(f"    {status}: {count}")
+
+        print()
+
+    except requests.RequestException as e:
+        print(f"❌ Failed to fetch summary: {e}")
+        sys.exit(1)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Sync raw reports from cloud MCP server to local Mac"
     )
     parser.add_argument(
         "--server", "-s",
-        default=os.environ.get("SOV_SYNC_SERVER", DEFAULT_SERVER),
+        default=DEFAULT_SERVER,
         help=f"Server URL (default: {DEFAULT_SERVER})"
     )
     parser.add_argument(
@@ -180,9 +264,29 @@ def main():
         action="store_true",
         help="Show what would be downloaded without actually downloading"
     )
+    parser.add_argument(
+        "--work-queue", "-w",
+        action="store_true",
+        help="Show work queue (what needs research/attention)"
+    )
+    parser.add_argument(
+        "--summary",
+        action="store_true",
+        help="Show overall status summary"
+    )
 
     args = parser.parse_args()
 
+    # Handle info commands first
+    if args.work_queue:
+        show_work_queue(args.server)
+        return
+
+    if args.summary:
+        show_summary(args.server)
+        return
+
+    # Default: sync files
     results = sync_from_cloud(
         server_url=args.server,
         output_dir=args.output_dir,
