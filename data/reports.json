@@ -6,7 +6,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Emirate of Abu Dhabi sovereign credit report",
-      "attachments": ["AbuDhabi_Raw_Report.md"],
+      "attachments": [
+        "AbuDhabi_Raw_Report.md"
+      ],
       "createdAt": "2025-05-19T00:00:00.000Z",
       "updatedAt": "2025-05-19T00:00:00.000Z"
     },
@@ -16,7 +18,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Federative Republic of Brazil sovereign credit report",
-      "attachments": ["Brazil_Raw_Report.md"],
+      "attachments": [
+        "Brazil_Raw_Report.md"
+      ],
       "createdAt": "2025-05-23T00:00:00.000Z",
       "updatedAt": "2025-05-23T00:00:00.000Z"
     },
@@ -26,7 +30,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Chile sovereign credit report",
-      "attachments": ["Chile_Raw_Report.md"],
+      "attachments": [
+        "Chile_Raw_Report.md"
+      ],
       "createdAt": "2025-09-04T00:00:00.000Z",
       "updatedAt": "2025-09-04T00:00:00.000Z"
     },
@@ -36,7 +42,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Colombia sovereign credit report",
-      "attachments": ["Colombia_Raw_Report.md"],
+      "attachments": [
+        "Colombia_Raw_Report.md"
+      ],
       "createdAt": "2026-01-07T00:00:00.000Z",
       "updatedAt": "2026-01-07T00:00:00.000Z"
     },
@@ -46,7 +54,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "French Republic sovereign credit report",
-      "attachments": ["France_Raw_Report.md"],
+      "attachments": [
+        "France_Raw_Report.md"
+      ],
       "createdAt": "2025-11-15T00:00:00.000Z",
       "updatedAt": "2025-11-15T00:00:00.000Z"
     },
@@ -56,7 +66,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Hungary sovereign credit report",
-      "attachments": ["Hungary_Raw_Report.md"],
+      "attachments": [
+        "Hungary_Raw_Report.md"
+      ],
       "createdAt": "2025-10-24T00:00:00.000Z",
       "updatedAt": "2025-10-24T00:00:00.000Z"
     },
@@ -66,7 +78,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of India sovereign credit report",
-      "attachments": ["India_Raw_Report.md"],
+      "attachments": [
+        "India_Raw_Report.md"
+      ],
       "createdAt": "2025-09-09T00:00:00.000Z",
       "updatedAt": "2025-09-09T00:00:00.000Z"
     },
@@ -76,7 +90,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Indonesia sovereign credit report",
-      "attachments": ["Indonesia_Raw_Report.md"],
+      "attachments": [
+        "Indonesia_Raw_Report.md"
+      ],
       "createdAt": "2025-09-06T00:00:00.000Z",
       "updatedAt": "2025-09-06T00:00:00.000Z"
     },
@@ -86,7 +102,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Kazakhstan sovereign credit report",
-      "attachments": ["Kazakhstan_Raw_Report.md"],
+      "attachments": [
+        "Kazakhstan_Raw_Report.md"
+      ],
       "createdAt": "2025-11-18T00:00:00.000Z",
       "updatedAt": "2025-11-18T00:00:00.000Z"
     },
@@ -96,7 +114,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "United Mexican States sovereign credit report",
-      "attachments": ["Mexico_Raw_Report.md"],
+      "attachments": [
+        "Mexico_Raw_Report.md"
+      ],
       "createdAt": "2025-05-19T00:00:00.000Z",
       "updatedAt": "2025-05-19T00:00:00.000Z"
     },
@@ -106,7 +126,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Kingdom of Norway sovereign credit report",
-      "attachments": ["Norway_Raw_Report.md"],
+      "attachments": [
+        "Norway_Raw_Report.md"
+      ],
       "createdAt": "2025-10-15T00:00:00.000Z",
       "updatedAt": "2025-10-15T00:00:00.000Z"
     },
@@ -116,7 +138,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Panama sovereign credit report",
-      "attachments": ["Panama_Raw_Report.md"],
+      "attachments": [
+        "Panama_Raw_Report.md"
+      ],
       "createdAt": "2025-05-18T00:00:00.000Z",
       "updatedAt": "2025-05-18T00:00:00.000Z"
     },
@@ -126,7 +150,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Peru sovereign credit report",
-      "attachments": ["Peru_Raw_Report.md"],
+      "attachments": [
+        "Peru_Raw_Report.md"
+      ],
       "createdAt": "2025-10-12T00:00:00.000Z",
       "updatedAt": "2025-10-12T00:00:00.000Z"
     },
@@ -136,7 +162,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "State of Qatar sovereign credit report",
-      "attachments": ["Qatar_Raw_Report.md"],
+      "attachments": [
+        "Qatar_Raw_Report.md"
+      ],
       "createdAt": "2025-11-18T00:00:00.000Z",
       "updatedAt": "2025-11-18T00:00:00.000Z"
     },
@@ -146,7 +174,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Romania sovereign credit report",
-      "attachments": ["Romania_Raw_Report.md"],
+      "attachments": [
+        "Romania_Raw_Report.md"
+      ],
       "createdAt": "2025-10-12T00:00:00.000Z",
       "updatedAt": "2025-10-12T00:00:00.000Z"
     },
@@ -156,7 +186,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Kingdom of Saudi Arabia sovereign credit report",
-      "attachments": ["SaudiArabia_Raw_Report.md"],
+      "attachments": [
+        "SaudiArabia_Raw_Report.md"
+      ],
       "createdAt": "2025-11-18T00:00:00.000Z",
       "updatedAt": "2025-11-18T00:00:00.000Z"
     },
@@ -166,7 +198,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Singapore sovereign credit report",
-      "attachments": ["Singapore_Raw_Report.md"],
+      "attachments": [
+        "Singapore_Raw_Report.md"
+      ],
       "createdAt": "2025-10-17T00:00:00.000Z",
       "updatedAt": "2025-10-17T00:00:00.000Z"
     },
@@ -176,7 +210,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of South Africa sovereign credit report",
-      "attachments": ["SouthAfrica_Raw_Report.md"],
+      "attachments": [
+        "SouthAfrica_Raw_Report.md"
+      ],
       "createdAt": "2025-10-16T00:00:00.000Z",
       "updatedAt": "2025-10-16T00:00:00.000Z"
     },
@@ -186,7 +222,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Republic of Korea sovereign credit report",
-      "attachments": ["SouthKorea_Raw_Report.md"],
+      "attachments": [
+        "SouthKorea_Raw_Report.md"
+      ],
       "createdAt": "2025-09-04T00:00:00.000Z",
       "updatedAt": "2025-09-04T00:00:00.000Z"
     },
@@ -195,8 +233,10 @@
       "name": "Turkey",
       "type": "sovereign",
       "status": "raw-uploaded",
-      "description": "Republic of Türkiye sovereign credit report",
-      "attachments": ["Turkey_Raw_Report.md"],
+      "description": "Republic of T\u00fcrkiye sovereign credit report",
+      "attachments": [
+        "Turkey_Raw_Report.md"
+      ],
       "createdAt": "2025-09-06T00:00:00.000Z",
       "updatedAt": "2025-09-06T00:00:00.000Z"
     },
@@ -206,7 +246,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "United Arab Emirates sovereign credit report",
-      "attachments": ["UAE_Raw_Report.md"],
+      "attachments": [
+        "UAE_Raw_Report.md"
+      ],
       "createdAt": "2025-05-21T00:00:00.000Z",
       "updatedAt": "2025-05-21T00:00:00.000Z"
     },
@@ -216,7 +258,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "United Kingdom sovereign credit report",
-      "attachments": ["UK_Raw_Report.md"],
+      "attachments": [
+        "UK_Raw_Report.md"
+      ],
       "createdAt": "2026-01-07T00:00:00.000Z",
       "updatedAt": "2026-01-07T00:00:00.000Z"
     },
@@ -226,7 +270,9 @@
       "type": "sovereign",
       "status": "raw-uploaded",
       "description": "Oriental Republic of Uruguay sovereign credit report",
-      "attachments": ["Uruguay_Raw_Report.md"],
+      "attachments": [
+        "Uruguay_Raw_Report.md"
+      ],
       "createdAt": "2025-09-16T00:00:00.000Z",
       "updatedAt": "2025-09-16T00:00:00.000Z"
     },
@@ -236,7 +282,9 @@
       "type": "quasi-sovereign",
       "status": "raw-uploaded",
       "description": "General Authority of Civil Aviation - Saudi Arabia quasi-sovereign entity",
-      "attachments": ["GACI_Raw_Report.md"],
+      "attachments": [
+        "GACI_Raw_Report.md"
+      ],
       "createdAt": "2025-10-17T00:00:00.000Z",
       "updatedAt": "2025-10-17T00:00:00.000Z"
     },
@@ -289,6 +337,618 @@
       "attachments": [],
       "createdAt": "2026-01-17T00:00:00.000Z",
       "updatedAt": "2026-01-17T00:00:00.000Z"
+    },
+    {
+      "id": "sov_philippines",
+      "name": "Philippines",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Philippines - 33 portfolio positions, high priority",
+      "attachments": [],
+      "priority": "high",
+      "portfolioPositions": 33,
+      "createdAt": "2026-01-18T11:30:51.412135Z",
+      "updatedAt": "2026-01-18T11:30:51.412155Z"
+    },
+    {
+      "id": "sov_bahrain",
+      "name": "Bahrain",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Bahrain - 24 portfolio positions, high priority",
+      "attachments": [],
+      "priority": "high",
+      "portfolioPositions": 24,
+      "createdAt": "2026-01-18T11:30:51.412170Z",
+      "updatedAt": "2026-01-18T11:30:51.412172Z"
+    },
+    {
+      "id": "sov_egypt",
+      "name": "Egypt",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Egypt - 20 portfolio positions, high priority",
+      "attachments": [],
+      "priority": "high",
+      "portfolioPositions": 20,
+      "createdAt": "2026-01-18T11:30:51.412179Z",
+      "updatedAt": "2026-01-18T11:30:51.412181Z"
+    },
+    {
+      "id": "sov_dominicanrepublic",
+      "name": "Dominican Republic",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Dominican Republic - 17 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 17,
+      "createdAt": "2026-01-18T11:30:51.412187Z",
+      "updatedAt": "2026-01-18T11:30:51.412189Z"
+    },
+    {
+      "id": "sov_israel",
+      "name": "Israel",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Israel - 17 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 17,
+      "createdAt": "2026-01-18T11:30:51.412194Z",
+      "updatedAt": "2026-01-18T11:30:51.412196Z"
+    },
+    {
+      "id": "sov_guatemala",
+      "name": "Guatemala",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Guatemala - 14 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 14,
+      "createdAt": "2026-01-18T11:30:51.412201Z",
+      "updatedAt": "2026-01-18T11:30:51.412203Z"
+    },
+    {
+      "id": "sov_nigeria",
+      "name": "Nigeria",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Nigeria - 13 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 13,
+      "createdAt": "2026-01-18T11:30:51.412208Z",
+      "updatedAt": "2026-01-18T11:30:51.412210Z"
+    },
+    {
+      "id": "sov_oman",
+      "name": "Oman",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Oman - 11 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 11,
+      "createdAt": "2026-01-18T11:30:51.412215Z",
+      "updatedAt": "2026-01-18T11:30:51.412217Z"
+    },
+    {
+      "id": "sov_china",
+      "name": "China",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "China - 11 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 11,
+      "createdAt": "2026-01-18T11:30:51.412222Z",
+      "updatedAt": "2026-01-18T11:30:51.412224Z"
+    },
+    {
+      "id": "sov_argentina",
+      "name": "Argentina",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Argentina - 11 portfolio positions, medium priority",
+      "attachments": [],
+      "priority": "medium",
+      "portfolioPositions": 11,
+      "createdAt": "2026-01-18T11:30:51.412229Z",
+      "updatedAt": "2026-01-18T11:30:51.412231Z"
+    },
+    {
+      "id": "sov_elsalvador",
+      "name": "El Salvador",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "El Salvador - 9 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 9,
+      "createdAt": "2026-01-18T11:30:51.412236Z",
+      "updatedAt": "2026-01-18T11:30:51.412238Z"
+    },
+    {
+      "id": "sov_lebanon",
+      "name": "Lebanon",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Lebanon - 9 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 9,
+      "createdAt": "2026-01-18T11:30:51.412243Z",
+      "updatedAt": "2026-01-18T11:30:51.412245Z"
+    },
+    {
+      "id": "sov_paraguay",
+      "name": "Paraguay",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Paraguay - 9 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 9,
+      "createdAt": "2026-01-18T11:30:51.412250Z",
+      "updatedAt": "2026-01-18T11:30:51.412253Z"
+    },
+    {
+      "id": "sov_ukraine",
+      "name": "Ukraine",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Ukraine - 8 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 8,
+      "createdAt": "2026-01-18T11:30:51.412257Z",
+      "updatedAt": "2026-01-18T11:30:51.412259Z"
+    },
+    {
+      "id": "sov_kenya",
+      "name": "Kenya",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Kenya - 7 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 7,
+      "createdAt": "2026-01-18T11:30:51.412264Z",
+      "updatedAt": "2026-01-18T11:30:51.412266Z"
+    },
+    {
+      "id": "sov_angola",
+      "name": "Angola",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Angola - 7 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 7,
+      "createdAt": "2026-01-18T11:30:51.412271Z",
+      "updatedAt": "2026-01-18T11:30:51.412273Z"
+    },
+    {
+      "id": "sov_uzbekistan",
+      "name": "Uzbekistan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Uzbekistan - 6 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 6,
+      "createdAt": "2026-01-18T11:30:51.412278Z",
+      "updatedAt": "2026-01-18T11:30:51.412280Z"
+    },
+    {
+      "id": "sov_morocco",
+      "name": "Morocco",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Morocco - 6 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 6,
+      "createdAt": "2026-01-18T11:30:51.412284Z",
+      "updatedAt": "2026-01-18T11:30:51.412286Z"
+    },
+    {
+      "id": "sov_costarica",
+      "name": "Costa Rica",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Costa Rica - 6 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 6,
+      "createdAt": "2026-01-18T11:30:51.412291Z",
+      "updatedAt": "2026-01-18T11:30:51.412293Z"
+    },
+    {
+      "id": "sov_srilanka",
+      "name": "Sri Lanka",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Sri Lanka - 6 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 6,
+      "createdAt": "2026-01-18T11:30:51.412298Z",
+      "updatedAt": "2026-01-18T11:30:51.412301Z"
+    },
+    {
+      "id": "sov_ivorycoast",
+      "name": "Ivory Coast",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Ivory Coast - 5 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 5,
+      "createdAt": "2026-01-18T11:30:51.412305Z",
+      "updatedAt": "2026-01-18T11:30:51.412308Z"
+    },
+    {
+      "id": "sov_jordan",
+      "name": "Jordan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Jordan - 5 portfolio positions, low priority",
+      "attachments": [],
+      "priority": "low",
+      "portfolioPositions": 5,
+      "createdAt": "2026-01-18T11:30:51.412312Z",
+      "updatedAt": "2026-01-18T11:30:51.412314Z"
+    },
+    {
+      "id": "sov_kuwait",
+      "name": "Kuwait",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Kuwait - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412319Z",
+      "updatedAt": "2026-01-18T11:30:51.412321Z"
+    },
+    {
+      "id": "sov_pakistan",
+      "name": "Pakistan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Pakistan - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412326Z",
+      "updatedAt": "2026-01-18T11:30:51.412328Z"
+    },
+    {
+      "id": "sov_serbia",
+      "name": "Serbia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Serbia - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412333Z",
+      "updatedAt": "2026-01-18T11:30:51.412335Z"
+    },
+    {
+      "id": "sov_malaysia",
+      "name": "Malaysia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Malaysia - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412339Z",
+      "updatedAt": "2026-01-18T11:30:51.412342Z"
+    },
+    {
+      "id": "sov_bermuda",
+      "name": "Bermuda",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Bermuda - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412346Z",
+      "updatedAt": "2026-01-18T11:30:51.412348Z"
+    },
+    {
+      "id": "sov_ghana",
+      "name": "Ghana",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Ghana - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412353Z",
+      "updatedAt": "2026-01-18T11:30:51.412356Z"
+    },
+    {
+      "id": "sov_ecuador",
+      "name": "Ecuador",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Ecuador - 4 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 4,
+      "createdAt": "2026-01-18T11:30:51.412360Z",
+      "updatedAt": "2026-01-18T11:30:51.412362Z"
+    },
+    {
+      "id": "sov_honduras",
+      "name": "Honduras",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Honduras - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412367Z",
+      "updatedAt": "2026-01-18T11:30:51.412369Z"
+    },
+    {
+      "id": "sov_senegal",
+      "name": "Senegal",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Senegal - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412373Z",
+      "updatedAt": "2026-01-18T11:30:51.412376Z"
+    },
+    {
+      "id": "sov_trinidadandtobago",
+      "name": "Trinidad and Tobago",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Trinidad and Tobago - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412381Z",
+      "updatedAt": "2026-01-18T11:30:51.412383Z"
+    },
+    {
+      "id": "sov_armenia",
+      "name": "Armenia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Armenia - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412388Z",
+      "updatedAt": "2026-01-18T11:30:51.412390Z"
+    },
+    {
+      "id": "sov_mongolia",
+      "name": "Mongolia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Mongolia - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412395Z",
+      "updatedAt": "2026-01-18T11:30:51.412398Z"
+    },
+    {
+      "id": "sov_gabon",
+      "name": "Gabon",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Gabon - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412402Z",
+      "updatedAt": "2026-01-18T11:30:51.412405Z"
+    },
+    {
+      "id": "sov_jamaica",
+      "name": "Jamaica",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Jamaica - 3 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 3,
+      "createdAt": "2026-01-18T11:30:51.412411Z",
+      "updatedAt": "2026-01-18T11:30:51.412415Z"
+    },
+    {
+      "id": "sov_bolivia",
+      "name": "Bolivia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Bolivia - 2 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 2,
+      "createdAt": "2026-01-18T11:30:51.412424Z",
+      "updatedAt": "2026-01-18T11:30:51.412428Z"
+    },
+    {
+      "id": "sov_bahamas",
+      "name": "Bahamas",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Bahamas - 2 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 2,
+      "createdAt": "2026-01-18T11:30:51.412442Z",
+      "updatedAt": "2026-01-18T11:30:51.412446Z"
+    },
+    {
+      "id": "sov_benin",
+      "name": "Benin",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Benin - 2 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 2,
+      "createdAt": "2026-01-18T11:30:51.412454Z",
+      "updatedAt": "2026-01-18T11:30:51.412458Z"
+    },
+    {
+      "id": "sov_zambia",
+      "name": "Zambia",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Zambia - 2 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 2,
+      "createdAt": "2026-01-18T11:30:51.412468Z",
+      "updatedAt": "2026-01-18T11:30:51.412472Z"
+    },
+    {
+      "id": "sov_azerbaijan",
+      "name": "Azerbaijan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Azerbaijan - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412480Z",
+      "updatedAt": "2026-01-18T11:30:51.412484Z"
+    },
+    {
+      "id": "sov_papuanewguinea",
+      "name": "Papua New Guinea",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Papua New Guinea - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412505Z",
+      "updatedAt": "2026-01-18T11:30:51.412508Z"
+    },
+    {
+      "id": "sov_rwanda",
+      "name": "Rwanda",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Rwanda - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412513Z",
+      "updatedAt": "2026-01-18T11:30:51.412515Z"
+    },
+    {
+      "id": "sov_iraq",
+      "name": "Iraq",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Iraq - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412520Z",
+      "updatedAt": "2026-01-18T11:30:51.412522Z"
+    },
+    {
+      "id": "sov_barbados",
+      "name": "Barbados",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Barbados - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412527Z",
+      "updatedAt": "2026-01-18T11:30:51.412529Z"
+    },
+    {
+      "id": "sov_kyrgyzstan",
+      "name": "Kyrgyzstan",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Kyrgyzstan - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412534Z",
+      "updatedAt": "2026-01-18T11:30:51.412536Z"
+    },
+    {
+      "id": "sov_bulgaria",
+      "name": "Bulgaria",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Bulgaria - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412540Z",
+      "updatedAt": "2026-01-18T11:30:51.412543Z"
+    },
+    {
+      "id": "sov_cameroon",
+      "name": "Cameroon",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Cameroon - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412549Z",
+      "updatedAt": "2026-01-18T11:30:51.412551Z"
+    },
+    {
+      "id": "sov_montenegro",
+      "name": "Montenegro",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Montenegro - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412556Z",
+      "updatedAt": "2026-01-18T11:30:51.412558Z"
+    },
+    {
+      "id": "sov_suriname",
+      "name": "Suriname",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Suriname - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412563Z",
+      "updatedAt": "2026-01-18T11:30:51.412565Z"
+    },
+    {
+      "id": "sov_mozambique",
+      "name": "Mozambique",
+      "type": "sovereign",
+      "status": "needs-research",
+      "description": "Mozambique - 1 portfolio positions, minimal priority",
+      "attachments": [],
+      "priority": "minimal",
+      "portfolioPositions": 1,
+      "createdAt": "2026-01-18T11:30:51.412570Z",
+      "updatedAt": "2026-01-18T11:30:51.412572Z"
     }
   ]
 }
